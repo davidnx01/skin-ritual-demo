@@ -152,14 +152,14 @@
     });
   }
 
-  /* lepivá lišta na mobile – keď hlavné tlačidlo zmizne z obrazovky */
+  /* lepivá lišta na mobile – vždy, keď hlavné tlačidlo nie je na obrazovke (aj pred ním), aby bol košík pod palcom */
   var sticky = $('[data-sticky]');
   var cta = $('[data-buy-cta]');
   if (sticky && cta && 'IntersectionObserver' in window) {
     var stickyBtn = $('button', sticky);
     new IntersectionObserver(function (entries) {
       var e = entries[0];
-      var past = !e.isIntersecting && e.boundingClientRect.top < 0;
+      var past = !e.isIntersecting;
       sticky.classList.toggle('show', past);
       sticky.setAttribute('aria-hidden', String(!past));
       if (stickyBtn) stickyBtn.tabIndex = past ? 0 : -1;
@@ -194,17 +194,6 @@
       state.stars = state.stars === s ? null : s;
       $$('button[data-stars]').forEach(function (x) { x.setAttribute('aria-pressed', String(x.getAttribute('data-stars') === state.stars)); });
       applyReviews();
-    });
-  });
-
-  /* poznámky k návrhu */
-  $$('[data-notes-toggle]').forEach(function (b) {
-    b.addEventListener('click', function () {
-      var on = document.body.classList.toggle('notes');
-      $$('[data-notes-toggle]').forEach(function (x) {
-        if (x.hasAttribute('aria-pressed')) x.setAttribute('aria-pressed', String(on));
-        if (x.closest('.demo-bar')) x.textContent = on ? 'Skryť poznámky k návrhu' : 'Zobraziť poznámky k návrhu';
-      });
     });
   });
 })();
