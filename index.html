@@ -67,39 +67,96 @@
 
 <main id="obsah">
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="wrap">
-      <div class="hero__grid">
-        <div>
-          <p class="eyebrow">Kozmetika z kliniky estetickej medicíny</p>
-          <h1 class="display">Luxusná starostlivosť o pleť <em>od tímu FB Clinic</em></h1>
-        </div>
-        <div class="hero__side">
-          <p class="lead">Krémy a séra, ktoré spájajú prírodu s najnovšími vedeckými poznatkami. Pomôžeme vám pochopiť ich zloženie a zaradiť ich do každodennej rutiny.</p>
-          <div class="hero__actions">
-            <a class="btn btn--primary" href="#kolekcia">Pozrieť kolekciu</a>
-            <a class="arrow-link" href="produkt.html">Novinka Auré Révive <span aria-hidden="true">→</span></a>
+  <h1 class="sr">Fabulous Beauty – kozmetika od tímu FB Clinic</h1>
+
+  <!-- ÚVODNÝ SLIDER -->
+  <section class="hs" aria-roledescription="carousel" aria-label="Odporúčané produkty" data-hs>
+    <div class="hs__slides" aria-live="off" data-hs-slides>
+
+      <div class="hs__slide is-active" id="hs-1" role="tabpanel" aria-roledescription="slide" aria-labelledby="hs-t1" data-hs-slide>
+        <div class="hs__copy">
+          <p class="hs__tag">Novinka</p>
+          <h2 class="hs__title">Omladzujúca kúra</h2>
+          <p class="hs__lead"><strong>Auré Révive</strong> – retinolový krém, ktorý pleti dodá okamžitú hydratáciu a rozjasní jej unavený vzhľad.</p>
+          <p class="hs__price"><span class="num">59,90 €</span><small>s DPH</small></p>
+          <div class="hs__actions">
+            <button class="btn btn--primary" type="button" data-add="Auré Révive">Pridať do košíka</button>
+            <a class="hs__more" href="produkt.html">Zobraziť produkt</a>
           </div>
+          <p class="hs__note" data-note="Na súčasnom webe je Révive len na osobný odber (neposiela sa). Ak to platí, na prvý slide patrí produkt, ktorý sa posiela – napr. Lashienne."><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Osobný odber zdarma v FB Clinic, Bratislava</p>
         </div>
+        <figure class="hs__media">
+          <img src="https://fabulousbeauty.eu/theme/img/promo-woman-cream.webp" alt="Žena drží téglik krému Auré Révive" width="1536" height="1024" style="object-position:58% 45%" fetchpriority="high">
+        </figure>
+      </div>
+
+      <div class="hs__slide" id="hs-2" role="tabpanel" aria-roledescription="slide" aria-labelledby="hs-t2" data-hs-slide>
+        <div class="hs__copy">
+          <p class="hs__tag">Sada 3 krémov</p>
+          <h2 class="hs__title">Deň &amp; noc</h2>
+          <p class="hs__lead">Celá kolekcia Auré v jednej objednávke: <strong>Lumi</strong> na deň, <strong>Noir</strong> na noc a <strong>Révive</strong> ako omladzujúca kúra.</p>
+          <p class="hs__price" data-note="Sada na webe zatiaľ nie je – je to návrh. Cena je súčet troch krémov; či bude so zľavou, rozhodne klient."><span class="num">139,70 €</span><small>s DPH za 3 krémy</small></p>
+          <div class="hs__actions">
+            <button class="btn btn--primary" type="button" data-add="Sada Auré deň &amp; noc">Pridať sadu do košíka</button>
+            <a class="hs__more" href="#kolekcia">Pozrieť kolekciu</a>
+          </div>
+          <p class="hs__note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Osobný odber zdarma v FB Clinic, Bratislava</p>
+        </div>
+        <figure class="hs__media">
+          <img src="https://fabulousbeauty.eu/theme/img/hero-fb-products-original-logo.webp" alt="Krémy Auré Lumi, Auré Noir a Auré Révive na mramorovom podnose" width="1942" height="809" style="object-position:54% 60%">
+        </figure>
+      </div>
+
+      <div class="hs__slide" id="hs-3" role="tabpanel" aria-roledescription="slide" aria-labelledby="hs-t3" data-hs-slide>
+        <div class="hs__copy">
+          <p class="hs__tag">Novinka</p>
+          <h2 class="hs__title" data-note="Pred kampaňou overiť s klinikou zloženie a tvrdenie „rast mihalníc“ – ak sérum obsahuje analóg prostaglandínu, platia v EÚ prísnejšie pravidlá.">Výrazný pohľad</h2>
+          <p class="hs__lead"><strong>Auré Lashienne</strong> – očné sérum na rast mihalníc v zlatom balení.</p>
+          <p class="hs__price"><span class="num">79,90 €</span><small>s DPH</small></p>
+          <div class="hs__actions">
+            <button class="btn btn--primary" type="button" data-add="Auré Lashienne">Pridať do košíka</button>
+            <a class="hs__more" href="#">Zobraziť produkt</a>
+          </div>
+          <p class="hs__note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 7.5 12 3l9 4.5v9L12 21l-9-4.5z"/><path d="M3 7.5 12 12l9-4.5M12 12v9"/></svg>Packeta na výdajné miesto od 4,02 €</p>
+        </div>
+        <figure class="hs__media">
+          <img src="https://fabulousbeauty.eu/catalogue-media/aure-lashienne.webp" alt="Zlaté balenie očného séra Auré Lashienne" width="1254" height="1254" style="object-position:50% 58%">
+        </figure>
+      </div>
+
+    </div>
+
+    <div class="wrap hs__bar">
+      <button class="hs__toggle" type="button" aria-label="Pozastaviť prepínanie" data-hs-toggle>
+        <svg class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="7" y="5.5" width="3" height="13" rx=".6"/><rect x="14" y="5.5" width="3" height="13" rx=".6"/></svg>
+        <svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg>
+      </button>
+      <div class="hs__tabs" role="tablist" aria-label="Vyberte produkt">
+        <button class="hs__tab" id="hs-t1" role="tab" type="button" aria-controls="hs-1" aria-selected="true" data-hs-tab>
+          <span class="hs__ring"><img src="https://fabulousbeauty.eu/catalogue-media/08448D9E-2F20-4D50-B51A-9E70C369E79C.webp" alt="" width="1024" height="1024"><svg viewBox="0 0 52 52" aria-hidden="true"><circle class="t" cx="26" cy="26" r="25"/><circle class="p" cx="26" cy="26" r="25" pathLength="100"/></svg></span>
+          <span class="hs__tname">Auré Révive</span>
+          <span class="hs__tmeta">Retinolový krém, 59,90 €</span>
+        </button>
+        <button class="hs__tab" id="hs-t2" role="tab" type="button" aria-controls="hs-2" aria-selected="false" tabindex="-1" data-hs-tab>
+          <span class="hs__ring"><img src="https://fabulousbeauty.eu/theme/img/hero-fb-products-original-logo.webp" alt="" width="1942" height="809" style="object-position:45% 50%"><svg viewBox="0 0 52 52" aria-hidden="true"><circle class="t" cx="26" cy="26" r="25"/><circle class="p" cx="26" cy="26" r="25" pathLength="100"/></svg></span>
+          <span class="hs__tname">Sada deň &amp; noc</span>
+          <span class="hs__tmeta">Lumi, Noir a Révive, 139,70 €</span>
+        </button>
+        <button class="hs__tab" id="hs-t3" role="tab" type="button" aria-controls="hs-3" aria-selected="false" tabindex="-1" data-hs-tab>
+          <span class="hs__ring"><img src="https://fabulousbeauty.eu/catalogue-media/aure-lashienne.webp" alt="" width="1254" height="1254"><svg viewBox="0 0 52 52" aria-hidden="true"><circle class="t" cx="26" cy="26" r="25"/><circle class="p" cx="26" cy="26" r="25" pathLength="100"/></svg></span>
+          <span class="hs__tname">Auré Lashienne</span>
+          <span class="hs__tmeta">Očné sérum, 79,90 €</span>
+        </button>
       </div>
     </div>
-    <figure class="hero__img">
-      <img src="https://fabulousbeauty.eu/theme/img/hero-fb-products-original-logo.webp" alt="Krémy Auré Lumi, Auré Noir a Auré Révive na mramorovom podnose" width="1942" height="809" fetchpriority="high">
-      <figcaption class="hero__caption">Kolekcia Auré</figcaption>
-    </figure>
   </section>
 
-  <!-- DÔVERA – ČÍSLA KLINIKY -->
-  <section class="proof" aria-label="FB Clinic v číslach">
-    <div class="wrap">
-      <ul class="proof__grid">
-        <li class="proof__item"><p class="proof__num num">15+</p><p class="proof__label">rokov praxe v estetickej medicíne</p></li>
-        <li class="proof__item"><p class="proof__num num">5 000+</p><p class="proof__label">spokojných klientov kliniky</p></li>
-        <li class="proof__item"><p class="proof__num num">4,9 / 5</p><p class="proof__label">hodnotenie FB Clinic na Googli</p></li>
-        <li class="proof__item"><p class="proof__num">3 kliniky</p><p class="proof__label">Bratislava · Žilina · Nitra</p></li>
-      </ul>
-      <p class="proof__src" data-note="Čísla sú z webu fbclinic.eu (10/2026). Pred spustením nechať potvrdiť klinikou.">Údaje FB Clinic, kliniky, ktorá za značkou stojí.</p>
+  <!-- KTO STOJÍ ZA ZNAČKOU -->
+  <section class="trust" aria-label="Kto stojí za značkou">
+    <div class="wrap trust__in">
+      <img src="https://fabulousbeauty.eu/theme/logo.png" alt="" width="201" height="155">
+      <p data-note="Čísla sú z webu fbclinic.eu (10/2026). Pred spustením nechať potvrdiť klinikou.">Kozmetiku Auré prináša tím <strong>FB Clinic</strong> – kliniky estetickej medicíny v Bratislave, Žiline a Nitre s praxou viac ako 15&nbsp;rokov, 5&nbsp;000+ klientmi a hodnotením <strong>4,9&nbsp;z&nbsp;5</strong> na Googli.</p>
+      <a class="link" href="#klinika">O klinike</a>
     </div>
   </section>
 
