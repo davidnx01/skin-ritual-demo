@@ -57,6 +57,56 @@
     });
   });
 
+  /* úvodný slider – taby s produktmi, automatické prepínanie s pauzou (WCAG 2.2.2) */
+  var hs = $('[data-hs]');
+  if (hs) {
+    var hsSlides = $$('[data-hs-slide]', hs);
+    var hsTabs = $$('[data-hs-tab]', hs);
+    var hsToggle = $('[data-hs-toggle]', hs);
+    var hsLive = $('[data-hs-slides]', hs);
+    var hsCur = 0;
+    var hsGo = function (i, focusTab) {
+      hsCur = (i + hsSlides.length) % hsSlides.length;
+      hsSlides.forEach(function (s, k) { s.classList.toggle('is-active', k === hsCur); });
+      hsTabs.forEach(function (t, k) {
+        t.setAttribute('aria-selected', String(k === hsCur));
+        t.tabIndex = k === hsCur ? 0 : -1;
+      });
+      if (focusTab) hsTabs[hsCur].focus();
+    };
+    var hsPlay = function (on) {
+      hs.classList.remove('is-playing');
+      if (on) { void hs.offsetWidth; hs.classList.add('is-playing'); }
+      hs.classList.toggle('is-stopped', !on);
+      hsLive.setAttribute('aria-live', on ? 'off' : 'polite');
+      hsToggle.setAttribute('aria-label', on ? 'Pozastaviť prepínanie' : 'Spustiť prepínanie');
+    };
+    hsTabs.forEach(function (t, k) {
+      t.addEventListener('click', function () { hsPlay(false); hsGo(k); });
+      t.addEventListener('keydown', function (e) {
+        var to = { ArrowRight: hsCur + 1, ArrowLeft: hsCur - 1, Home: 0, End: hsSlides.length - 1 }[e.key];
+        if (to === undefined) return;
+        e.preventDefault(); hsPlay(false); hsGo(to, true);
+      });
+      $('.p', t).addEventListener('animationend', function () {
+        if (k === hsCur && hs.classList.contains('is-playing')) hsGo(hsCur + 1);
+      });
+    });
+    hsToggle.addEventListener('click', function () { hsPlay(!hs.classList.contains('is-playing')); });
+    hs.addEventListener('mouseenter', function () { hs.classList.add('is-hold'); });
+    hs.addEventListener('mouseleave', function () { hs.classList.remove('is-hold'); });
+    hs.addEventListener('focusin', function (e) { if (e.target !== hsToggle) hsPlay(false); });
+    var hx = null, hy = null;
+    hsLive.addEventListener('touchstart', function (e) { hx = e.touches[0].clientX; hy = e.touches[0].clientY; }, { passive: true });
+    hsLive.addEventListener('touchend', function (e) {
+      if (hx === null) return;
+      var dx = e.changedTouches[0].clientX - hx, dy = e.changedTouches[0].clientY - hy; hx = null;
+      if (Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(dy)) return;
+      hsPlay(false); hsGo(hsCur + (dx < 0 ? 1 : -1));
+    });
+    hsPlay(!window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  }
+
   /* rituál ráno / večer na homepage */
   var ritualText = $('[data-ritual-text]');
   var texts = {
