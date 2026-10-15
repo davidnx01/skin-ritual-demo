@@ -316,21 +316,28 @@ button { font: inherit; color: inherit; }
   .gallery__thumbs button { width: 64px; }
 }
 
-.buy { display: flex; flex-direction: column; gap: 20px; }
-.buy h1 { font-size: clamp(52px, 6.4vw, 82px); }
-.buy__sub { font-family: var(--serif); font-size: 24px; line-height: 1.25; color: var(--ink-2); margin-top: -8px; }
-.rating { display: inline-flex; align-items: center; gap: 10px; font-size: 14px; text-decoration: none; min-height: 32px; }
+.buy { display: flex; flex-direction: column; gap: 32px; }
+.buy h1 { font-size: clamp(52px, 6.4vw, 82px); line-height: 1.04; margin-top: 22px; }
+.buy__sub { font-size: 17px; line-height: 1.7; color: var(--ink-soft); max-width: 36ch; margin-top: 20px; text-wrap: balance; }
+.rating { display: inline-flex; align-items: center; gap: 12px; font-size: 14px; text-decoration: none; min-height: 32px; margin-top: 26px; }
 .stars { color: var(--gold); letter-spacing: 2px; font-size: 15px; }
-.sample-pill { font-size: 10px; letter-spacing: .14em; text-transform: uppercase; border: 1px dashed var(--rose-deep); color: var(--rose-deep); padding: 1px 7px; border-radius: 99px; }
-.price-row { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; padding-top: 18px; border-top: 1px solid var(--line); }
+.sample-pill { font-size: 10px; letter-spacing: .14em; text-transform: uppercase; border: 1px dashed var(--rose-deep); color: var(--rose-deep); padding: 2px 10px; border-radius: 99px; }
+.price-row { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; padding-top: 30px; border-top: 1px solid var(--line); }
 .price { font-size: 32px; font-weight: 600; letter-spacing: -.01em; }
 .price-meta { font-size: 13px; color: var(--ink-soft); }
-.benefits { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 18px; }
+.benefits { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 36px; }
 @media (max-width: 420px) { .benefits { grid-template-columns: 1fr; } }
-.benefits li { display: flex; gap: 10px; font-size: 14.5px; line-height: 1.45; }
-.benefits svg { flex: none; width: 18px; height: 18px; color: var(--gold); margin-top: 1px; }
-.stock { display: flex; align-items: center; gap: 10px; font-size: 14px; }
-.stock .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ok); box-shadow: 0 0 0 4px rgba(47, 107, 74, .14); }
+.benefits li { display: flex; gap: 14px; font-size: 15.5px; line-height: 1.5; }
+.benefits svg { flex: none; width: 18px; height: 18px; color: var(--gold); margin-top: 3px; }
+@media (max-width: 520px) {
+  .buy { gap: 28px; }
+  .buy h1 { margin-top: 18px; }
+  .buy__sub { font-size: 16px; margin-top: 16px; }
+  .rating { margin-top: 22px; }
+  .price-row { padding-top: 26px; }
+}
+.stock { display: flex; align-items: flex-start; gap: 14px; font-size: 14px; line-height: 1.55; }
+.stock .dot { flex: none; margin: 7px 0 0 4px; width: 8px; height: 8px; border-radius: 50%; background: var(--ok); box-shadow: 0 0 0 4px rgba(47, 107, 74, .14); }
 .buy__cta { display: grid; grid-template-columns: auto 1fr; gap: 10px; }
 .qty { display: inline-flex; align-items: center; border: 1px solid var(--line-strong); border-radius: var(--radius); background: var(--paper); }
 .qty button { width: 48px; height: 52px; border: 0; background: none; font-size: 20px; cursor: pointer; }
