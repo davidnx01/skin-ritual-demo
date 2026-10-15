@@ -320,7 +320,7 @@ button { font: inherit; color: inherit; }
 .buy h1 { font-size: clamp(52px, 6.4vw, 82px); }
 .buy__sub { font-family: var(--serif); font-weight: 500; letter-spacing: -.01em; font-size: 24px; line-height: 1.25; color: var(--ink-2); margin: 8px 0 6px; }
 .rating { display: inline-flex; align-items: center; gap: 10px; font-size: 14px; text-decoration: none; min-height: 32px; }
-.stars { color: var(--gold); letter-spacing: 2px; font-size: 17px; margin-right: -7px; }
+.stars { color: var(--gold); letter-spacing: 2px; font-size: 20px; margin-right: -7px; }
 .sample-pill { font-size: 10px; letter-spacing: .14em; text-transform: uppercase; border: 1px dashed var(--rose-deep); color: var(--rose-deep); padding: 1px 7px; border-radius: 99px; }
 .price-row { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; padding-top: 18px; border-top: 1px solid var(--line); }
 .price { font-size: 32px; font-weight: 600; letter-spacing: -.01em; }
